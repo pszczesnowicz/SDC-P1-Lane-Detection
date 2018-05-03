@@ -4,25 +4,25 @@ This is my submission for the Udacity Self-Driving Car Nanodegree Lane Detection
 
 My pipeline takes a video input and outputs it with the lane markers highlighted.
 
-<img src="https://raw.githubusercontent.com/pszczesnowicz/SDCND-P1-LaneDetection/master/readme_images/initial.jpg" width="400"> <img src="https://raw.githubusercontent.com/pszczesnowicz/SDCND-P1-LaneDetection/master/readme_images/final.jpg" width="400">
+<img src="https://raw.githubusercontent.com/pszczesnowicz/SDCND-P1-LaneDetection/master/readme_images/initial.jpg" width="320"><img src="https://raw.githubusercontent.com/pszczesnowicz/SDCND-P1-LaneDetection/master/readme_images/final.jpg" width="320">
 
 # Pipeline
 
 1. First, my pipeline converts the video frame to a grayscale image.
 
-	<img src="https://raw.githubusercontent.com/pszczesnowicz/SDCND-P1-LaneDetection/master/readme_images/grayscale.jpg" width="400">
+<img src="https://raw.githubusercontent.com/pszczesnowicz/SDCND-P1-LaneDetection/master/readme_images/grayscale.jpg" width="640">
 
 2. Then, to reduce noise and smooth the image, a Gaussian blur is applied to the grayscale image.
 
-	<img src="https://raw.githubusercontent.com/pszczesnowicz/SDCND-P1-LaneDetection/master/readme_images/gaussian_blur.jpg" width="400">
+<img src="https://raw.githubusercontent.com/pszczesnowicz/SDCND-P1-LaneDetection/master/readme_images/gaussian_blur.jpg" width="640">
 
 3. The blurred image is then fed through a Canny edge detection algorithm which outputs an image containing only the edges.
 
-	<img src="https://raw.githubusercontent.com/pszczesnowicz/SDCND-P1-LaneDetection/master/readme_images/canny_transform.jpg" width="400">
+<img src="https://raw.githubusercontent.com/pszczesnowicz/SDCND-P1-LaneDetection/master/readme_images/canny_transform.jpg" width="640">
 
 4. To further reduce noise, everything outside of a region where we would expect to find the lane markers is masked.
 
-	<img src="https://raw.githubusercontent.com/pszczesnowicz/SDCND-P1-LaneDetection/master/readme_images/mask.jpg" width="400">
+<img src="https://raw.githubusercontent.com/pszczesnowicz/SDCND-P1-LaneDetection/master/readme_images/mask.jpg" width="640">
 
 5. A Hough transform is then applied to the masked image. The output is an array of coordinate points that correspond to lines in the masked image. The `hough_lines` function separates the lines based on their slope, i.e. left and right lane markers, and ignores lines with slopes outside of a specified range, e.g. horizontal and vertical lines. The following operations are done separately for the left and right sets of coordinates.
 
