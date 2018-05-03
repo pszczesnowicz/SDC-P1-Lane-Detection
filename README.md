@@ -56,7 +56,7 @@ This pipeline was set up for videos that were taken in good weather and with lan
 
 To reduce noise, the pipeline ignores lines with slopes less than 0.5 and greater than 2, but this would also ignore pedestrian crossings, intersections, etc..
 
-This project is succeeded by the [Advanced Lane Detection and Vehicle Tracking Project](https://pszczesnowicz.github.io/SDC-P4-5-Advanced-Lane-Detection-Vehicle-Tracking/) which solves these issues.
+This project is succeeded by my [Advanced Lane Detection and Vehicle Tracking Project](https://pszczesnowicz.github.io/SDC-P4-5-Advanced-Lane-Detection-Vehicle-Tracking/) which solves these issues.
 
 # References
 
